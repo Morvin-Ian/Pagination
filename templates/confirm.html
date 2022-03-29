@@ -1,0 +1,9 @@
+<form method="POST" >
+    {% csrf_token %}
+
+    <h1>Delete the {{object.name}} post</h1>
+
+    <button type="submit" name="del" >Delete</button>
+    <a href="{% url 'detailview' object.id%}" >Cancel</a>
+    
+</form>

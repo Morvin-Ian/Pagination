@@ -1,0 +1,21 @@
+<h1>Students</h1>
+{% for student in object_list %}
+    <ul>
+        <li>{{student.name}}</li>
+    </ul>
+{% endfor %}
+
+{% if page_obj.has_previous %} 
+<a href="?page=1">First</a>
+<a href="?page={{page_obj.previous_page_number}}">Previous</a>
+
+{% endif %}
+
+{% if page_obj.has_next %} 
+<a href="?page={{page_obj.next_page_number}}">Next</a>
+<a href="?page={{page_obj.paginator.num_pages}}">Last</a>
+
+{% endif %}
+
+<br> Page {{page_obj.number}} out of {{page_obj.paginator.num_pages}} 
+
